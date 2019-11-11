@@ -1,0 +1,10 @@
+{
+	"extension": "gremlin",
+	"filterName": "Gremlin script",
+	"namePrefix": "Gremlin",
+	"hasUpdateScript": false,
+	"level": {
+		"container": true,
+		"entity": false
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"errors": {
+		"NO_DATABASES": "There is no databases in this TinkerPop instance",
+		"WRONG_CONNECTION": "Cannot connect to TinkerPop instance"
+	},
+	"excludeDocKind": ["id"]
+}

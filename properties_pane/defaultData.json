@@ -1,0 +1,40 @@
+{
+	"model": {
+		"modelName": "New model",
+		"dbVersion": "",
+		"dbVendor": "ArangoDB"
+	},
+	"container": {
+		"name": "New database",
+		"active": true,
+		"indexes": []
+	},
+	"collection": {
+		"collectionName": "New collection",
+		"numberOfShards": 1,
+		"replicationFactor": 1,
+		"indexBuckets": 16,
+		"shardingStrategy": "enterprise-hash-smart-edge"
+	},
+	"field": {
+		"name": "New property",
+		"propCardinality": "list"
+	},
+	"patternField": {
+		"name": "^[a-zA-Z0-9_.-]{20}$"
+	},
+	"multipleField": {
+		"primaryKey": false
+	},
+	"subschema": {},
+	"arrayItem": {},
+	"choice": {},
+	"relationship": {
+		"name": "New edge"
+	},
+	"user": {},
+	"view": {
+		"viewOn": "",
+		"pipeline": ""
+	}
+}

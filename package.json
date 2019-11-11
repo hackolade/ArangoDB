@@ -1,0 +1,49 @@
+{
+    "name": "ArangoDB",
+    "version": "0.0.1",
+    "versionDate": "2019-10-25",
+    "author": "hackolade",
+    "engines": {
+        "hackolade": "3.5.x",
+        "hackoladePlugin": "1.0.0"
+    },
+    "contributes": {
+        "target": {
+            "applicationTarget": "ArangoDB",
+            "title": "ArangoDB",
+			"versions": [
+				"3.5",
+				"3.4",
+				"3.3",
+				"3.2",
+				"3.1",
+				"3.0"
+			]
+		},
+        "features": {
+            "jaySchemaHasRequiredPatternField": false,
+            "nestedCollections": false,
+            "graphDB": true,
+            "relationships": {
+                "connectOnEntityLevel": true,
+                "hasData": true
+            },
+            "enableForwardEngineering": {
+				"jsonDocument": true,
+				"jsonSchema": true,
+				"excel": true,
+				"plugin": true
+			},
+			"enableReverseEngineering": {
+				"jsonDocument": true,
+				"jsonSchema": true,
+				"ddl": true,
+				"xsd": true,
+				"excel": true,
+				"plugin": true 
+			}
+        }
+    },
+    "description": "Hackolade plugin for ArangoDB",
+    "disabled": false
+}

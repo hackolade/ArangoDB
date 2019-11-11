@@ -1,0 +1,11 @@
+{
+  "name": "TINKERPOP",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Hackolade",
+  "dependencies": {
+    "gremlin": "^3.4.3",
+    "lodash": "^4.17.15"
+  },
+  "installed": true
+}
