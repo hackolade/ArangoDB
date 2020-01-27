@@ -255,6 +255,9 @@ making sure that you maintain a proper JSON format.
 				"propertyKeyword": "smartJoinAttribute",
 				"propertyType": "fieldList",
 				"template": "orderedList",
+				"templateOptions": {
+					"maxFields": 1
+				},
 				"dependency": {
 					"key": "enableSharding",
 					"value": true
