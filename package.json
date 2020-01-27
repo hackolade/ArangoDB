@@ -26,6 +26,7 @@
             "graphDB": true,
             "relationships": {
                 "connectOnEntityLevel": true,
+                "connectOnFieldLevel": true,
                 "hasData": true
             },
             "enableForwardEngineering": {
