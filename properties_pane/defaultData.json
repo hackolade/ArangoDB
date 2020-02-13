@@ -39,6 +39,7 @@
 	"user": {},
 	"view": {
 		"viewOn": "",
-		"pipeline": ""
+		"pipeline": "",
+		"viewType": "arangosearch"
 	}
 }
