@@ -154,12 +154,6 @@ making sure that you maintain a proper JSON format.
 						"propertyType": "text"
 					},
 					{
-						"propertyName": "Password",
-						"propertyKeyword": "passwd",
-						"propertyTooltip": "password",
-						"propertyType": "text"
-					},
-					{
 						"propertyName": "Active",
 						"propertyKeyword": "active",
 						"propertyType": "checkbox"
