@@ -131,6 +131,37 @@ making sure that you maintain a proper JSON format.
 		"string": [
 			"name",
 			"code",
+			{
+				"propertyName": "Collection",
+				"propertyKeyword": "viewFieldCollection",
+				"propertyTooltip": "",
+				"propertyType": "text",
+				"dependency": {
+					"key": "refType",
+					"value": "collectionReference"
+				}
+			},
+			{
+				"propertyName": "Analyzers",
+				"propertyType": "group",
+				"propertyKeyword": "analyzers",
+				"propertyTooltip": "",
+				"hackoladeMeta": {
+					"enabledOnReferenceRoot": true
+				},
+				"dependency": {
+					"key": "refType",
+					"value": "collectionReference"
+				},
+				"structure": [
+					{
+						"propertyName": "Analyzer",
+						"propertyKeyword": "analyzer",
+						"propertyTooltip": "analyzer",
+						"propertyType": "text"
+					}
+				]
+			},
 			"schemaId",
 			"description",
 			"type",
