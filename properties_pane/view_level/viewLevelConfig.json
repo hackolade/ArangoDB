@@ -119,6 +119,148 @@ making sure that you maintain a proper JSON format.
 		"lowerTab": "Details",
 		"structure": [
 			{
+				"propertyKeyword": "pipeline",
+				"hidden": true
+			},
+			{
+				"propertyKeyword": "viewOn",
+				"hidden": true
+			},
+			{
+				"propertyName": "Type",
+				"propertyKeyword": "viewType",
+				"propertyTooltip": "Select from list of options",
+				"propertyType": "select",
+				"options": [
+					"arangosearch"
+				]
+			},
+			{
+				"propertyName": "Primary sort",
+				"propertyKeyword": "sortedByKey",
+				"propertyType": "fieldList",
+				"template": "orderedList",
+				"attributeList": [
+					{ "name": "ascending", "abbr": "\u2191" },
+					{ "name": "descending", "abbr": "\u2193" }
+				]
+			},
+			{
+				"propertyName": "Cleanup interval step",
+				"propertyKeyword": "cleanupIntervalStep",
+				"propertyType": "numeric",
+				"valueType": "number",
+				"allowNegative": false
+			},
+			{
+				"propertyName": "Commit interval",
+				"propertyKeyword": "commitIntervalMsec",
+				"propertyType": "numeric",
+				"valueType": "number",
+				"allowNegative": false
+			},
+			{
+				"propertyName": "Consolidation interval",
+				"propertyKeyword": "consolidationIntervalMsec",
+				"propertyType": "numeric",
+				"valueType": "number",
+				"allowNegative": false
+			},
+			{
+				"propertyName": "Consolidation policy",
+				"propertyType": "block",
+				"propertyKeyword": "consolidationPolicy",
+				"propertyTooltip": "",
+				"structure": [
+					{
+						"propertyName": "Type",
+						"propertyKeyword": "consolidationType",
+						"propertyTooltip": "Select from list of options",
+						"propertyType": "select",
+						"options": [
+							"tier",
+							"bytes_accum"
+						]
+					},
+					{
+						"propertyName": "Threshold",
+						"propertyKeyword": "threshold",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"minValue": 0,
+						"maxValue": 1,
+						"dependency": {
+							"key": "consolidationType",
+							"value": "bytes_accum"
+						}
+					},
+					{
+						"propertyName": "Segments bytes floor",
+						"propertyKeyword": "segmentsBytesFloor",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"minValue": 0,
+						"dependency": {
+							"key": "consolidationType",
+							"value": "tier"
+						}
+					},
+					{
+						"propertyName": "Segments max",
+						"propertyKeyword": "segmentsMax",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"minValue": 0,
+						"dependency": {
+							"key": "consolidationType",
+							"value": "tier"
+						}
+					},
+					{
+						"propertyName": "Segments min",
+						"propertyKeyword": "segmentsMin",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"minValue": 0,
+						"dependency": {
+							"key": "consolidationType",
+							"value": "tier"
+						}
+					},
+					{
+						"propertyName": "Min score",
+						"propertyKeyword": "minScore",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"dependency": {
+							"key": "consolidationType",
+							"value": "tier"
+						}
+					}
+				]
+			},
+			{
+				"propertyName": "Write buffer idle",
+				"propertyKeyword": "writebufferIdle",
+				"propertyType": "numeric",
+				"valueType": "number",
+				"allowNegative": false
+			},
+			{
+				"propertyName": "Write buffer active",
+				"propertyKeyword": "writebufferActive",
+				"propertyType": "numeric",
+				"valueType": "number",
+				"allowNegative": false
+			},
+			{
+				"propertyName": "Write buffer max size",
+				"propertyKeyword": "writebufferSizeMax",
+				"propertyType": "numeric",
+				"valueType": "number",
+				"allowNegative": false
+			},
+			{
 				"propertyName": "Comments",
 				"propertyKeyword": "comments",
 				"shouldValidate": false,
