@@ -33,7 +33,7 @@
 				"jsonDocument": true,
 				"jsonSchema": true,
 				"excel": true,
-				"plugin": true
+				"plugin": false
 			},
 			"enableReverseEngineering": {
 				"jsonDocument": true,
@@ -41,7 +41,7 @@
 				"ddl": true,
 				"xsd": true,
 				"excel": true,
-				"plugin": true 
+				"plugin": false 
 			}
         }
     },
