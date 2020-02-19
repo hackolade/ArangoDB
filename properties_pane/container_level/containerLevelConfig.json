@@ -117,45 +117,7 @@ making sure that you maintain a proper JSON format.
 [
 	{
 		"lowerTab": "Details",
-		"containerLevelKeys": [{
-			"labelName": "System attributes",
-			"propertyName": "_key",
-			"propertyKeyword": "_key",
-			"defaultName": "_key",
-			"propertyPrimaryKey": true,
-			"propertyType": "text",
-			"typeName": "Data type",
-			"typeOptions": ["string"],
-			"defaultType": "string",
-			"disabledFieldOption": true,
-			"sampleGen": "&random"
-		},{
-			"labelName": "",
-			"propertyName": "_id",
-			"propertyKeyword": "docType",
-			"defaultName": "_id",
-			"propertyPrimaryKey": false,
-			"propertyType": "text",
-			"typeName": "Data type",
-			"typeOptions": ["string"],
-			"defaultType": "string",
-			"disabledFieldOption": true,
-			"sampleGen": "&entityName/&random"
-		},{
-			"labelName": "",
-			"propertyName": "_rev",
-			"propertyKeyword": "_rev",
-			"defaultName": "_rev",
-			"propertyPrimaryKey": false,
-			"propertyType": "text",
-			"typeName": "Data type",
-			"typeOptions": [
-				"string"
-			],
-			"defaultType": "string",
-			"disabledFieldOption": true,
-			"sampleGen": "&random"
-		}],
+		"containerLevelKeys": [],
 		"structure": [
 			{
 				"propertyName": "Description",
@@ -189,12 +151,6 @@ making sure that you maintain a proper JSON format.
 						"propertyName": "User name",
 						"propertyKeyword": "username",
 						"propertyTooltip": "username",
-						"propertyType": "text"
-					},
-					{
-						"propertyName": "Password",
-						"propertyKeyword": "passwd",
-						"propertyTooltip": "password",
 						"propertyType": "text"
 					},
 					{

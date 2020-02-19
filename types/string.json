@@ -3,6 +3,7 @@
 	"erdAbbreviation": "<str>",
 	"dtdAbbreviation": "{ABC}",
 	"useSample": true,
+	"hiddenOnEntity": "view",
 	"defaultValues": {
 		"type": "string",
 		"minLength": "",

@@ -3,6 +3,7 @@
 	"erdAbbreviation": "<null>",
 	"dtdAbbreviation": "{null}",
 	"useSample": false,
+	"hiddenOnEntity": "view",
 	"defaultValues": {
 		"type": "null",
 		"primaryKey": false,

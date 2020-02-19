@@ -1,43 +1,10 @@
-const _ = require('lodash');
-
 const DEFAULT_INDENT = '    ';
 let graphName = 'g';
 
 module.exports = {
 	generateContainerScript(data, logger, cb) {
-		let { collections, relationships, jsonData, containerData } = data;
-		logger.clear();
 		try {
-			let resultScript = '';
-			const traversalSource = _.get(containerData, [0, 'traversalSource'], 'g');
-			graphName = transformToValidGremlinName(traversalSource);
-			collections = collections.map(JSON.parse);
-			relationships = relationships.map(JSON.parse);
-			const indexesData = _.get(containerData, [1, 'indexes'], [])
-
-			const variables = _.get(containerData, [0, 'graphVariables'], [])
-			const variablesScript = generateVariables(variables);
-			const verticesScript = generateVertices(collections, jsonData);
-			const edgesScript = generateEdges(collections, relationships, jsonData);
-			const indexesScript = generateIndexes(indexesData);
-
-			if (variablesScript) {
-				resultScript += variablesScript + '\n';
-			}
-
-			if (verticesScript) {
-				resultScript += verticesScript;
-			}
-
-			if (edgesScript) {
-				resultScript += '\n\n' + edgesScript;
-			}
-
-			if (indexesScript) {
-				resultScript += '\n\n' + indexesScript;
-			}
-
-			cb(null, resultScript);
+			cb(null, '');
 		} catch(e) {
 			logger.log('error', { message: e.message, stack: e.stack }, 'Forward-Engineering Error');
 			setTimeout(() => {

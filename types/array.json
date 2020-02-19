@@ -4,6 +4,7 @@
 	"dtdAbbreviation": "[...]",
 	"sample": ["sample"],
 	"useSample": true,
+	"hiddenOnEntity": "view",
 	"defaultValues": {
 		"type": "array",
 		"properties": [],

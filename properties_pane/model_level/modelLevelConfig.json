@@ -136,12 +136,7 @@ making sure that you maintain a proper JSON format.
 				"propertyTooltip": "DB version",
 				"propertyType": "select",
 				"options": [
-					"3.5",
-					"3.4",
-					"3.3",
-					"3.2",
-					"3.1",
-					"3.0"
+					"3.x"
 				],
 				"disabledOption": false
 			},
@@ -153,6 +148,193 @@ making sure that you maintain a proper JSON format.
 				"propertyType": "details",
 				"template": "textarea"
 			}
+		]
+	},
+	{
+		"lowerTab": "Relationships",
+		"structure": [
+			{
+				"propertyName": "Relationships",
+				"propertyKeyword": "fieldRelationships",
+				"structure": [
+				]
+			},
+			{
+				"propertyName": "Edges",
+				"propertyKeyword": "entityRelationships",
+				"structure": [
+					{
+						"propertyName": "Wait for sync",
+						"propertyKeyword": "waitForSync",
+						"propertyType": "checkbox"
+					},
+					{
+						"propertyName": "Journal size",
+						"propertyKeyword": "journalSize",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"allowNegative": false
+					},
+					{
+						"propertyName": "Is system",
+						"propertyKeyword": "isSystem",
+						"propertyType": "checkbox"
+					},
+					{
+						"propertyName": "Is volatile",
+						"propertyKeyword": "isVolatile",
+						"propertyType": "checkbox"
+					},
+					{
+						"propertyName": "Key options",
+						"propertyType": "block",
+						"propertyKeyword": "keyOptions",
+						"propertyTooltip": "",
+						"structure": [
+							{
+								"propertyName": "Type",
+								"propertyKeyword": "keyOptionsType",
+								"propertyTooltip": "Select from list of options",
+								"propertyType": "select",
+								"options": [
+									"traditional",
+									"autoincrement",
+									"uuid",
+									"padded"
+								]
+							},
+							{
+								"propertyName": "Allow user keys",
+								"propertyKeyword": "allowUserKeys",
+								"propertyType": "checkbox"
+							},
+							{
+								"propertyName": "Increment",
+								"propertyKeyword": "increment",
+								"propertyType": "numeric",
+								"valueType": "number",
+								"allowNegative": false,
+								"step": 1,
+								"dependency": {
+									"key": "keyOptionsType",
+									"value": "autoincrement"
+								}
+							},
+							{
+								"propertyName": "Offset",
+								"propertyKeyword": "offset",
+								"propertyType": "numeric",
+								"valueType": "number",
+								"allowNegative": false,
+								"step": 1,
+								"dependency": {
+									"key": "keyOptionsType",
+									"value": "autoincrement"
+								}
+							}
+						]
+					},
+					{
+						"propertyName": "Index buckets",
+						"propertyKeyword": "indexBuckets",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"allowNegative": false,
+						"step": 1
+					},
+					{
+						"propertyName": "Enable sharding",
+						"propertyKeyword": "enableSharding",
+						"propertyType": "checkbox"
+					},
+					{
+						"propertyName": "Number of shards",
+						"propertyKeyword": "numberOfShards",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"allowNegative": false,
+						"step": 1,
+						"dependency": {
+							"key": "enableSharding",
+							"value": true
+						}
+					},
+					{
+						"propertyName": "Shard keys",
+						"propertyKeyword": "shardKeys",
+						"propertyType": "fieldList",
+						"template": "orderedList",
+						"dependency": {
+							"key": "enableSharding",
+							"value": true
+						}
+					},
+					{
+						"propertyName": "Replication factor",
+						"propertyKeyword": "replicationFactor",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"allowNegative": false,
+						"step": 1,
+						"dependency": {
+							"key": "enableSharding",
+							"value": true
+						}
+					},
+					{
+						"propertyName": "Write concern",
+						"propertyKeyword": "writeConcern",
+						"propertyType": "numeric",
+						"valueType": "number",
+						"allowNegative": false,
+						"step": 1,
+						"dependency": {
+							"key": "enableSharding",
+							"value": true
+						}
+					},
+					{
+						"propertyName": "Distribute shards like",
+						"propertyKeyword": "distributeShardsLike",
+						"propertyType": "text",
+						"dependency": {
+							"key": "enableSharding",
+							"value": true
+						}
+					},
+					{
+						"propertyName": "Sharding strategy",
+						"propertyKeyword": "shardingStrategy",
+						"propertyTooltip": "Select from list of options",
+						"propertyType": "select",
+						"options": [
+							"enterprise-hash-smart-edge",
+							"hash",
+							"community-compat",
+							"enterprise-compat",
+							"enterprise-smart-edge-compat"
+						],
+						"dependency": {
+							"key": "enableSharding",
+							"value": true
+						}
+					},
+					{
+						"propertyName": "Smart join attribute",
+						"propertyKeyword": "smartJoinAttribute",
+						"propertyType": "fieldList",
+						"template": "orderedList",
+						"templateOptions": {
+							"maxFields": 1
+						},
+						"dependency": {
+							"key": "enableSharding",
+							"value": true
+						}
+					}
+				]
+			}
+			
 		]
 	}
 ]

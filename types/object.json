@@ -3,6 +3,7 @@
 	"erdAbbreviation": "<obj>",
 	"dtdAbbreviation": "{...}",
 	"parentType": "document",
+	"hiddenOnEntity": "view",
 	"defaultValues": {
 		"type": "document", 
 		"childType": "object",

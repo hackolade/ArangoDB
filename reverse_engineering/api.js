@@ -1,37 +1,16 @@
 'use strict';
 
-const async = require('async');
-const _ = require('lodash');
-const gremlinHelper = require('./gremlinHelper');
-
 module.exports = {
 	connect: function(connectionInfo, logger, cb){
-		logger.clear();
-		logger.log('info', connectionInfo, 'connectionInfo', connectionInfo.hiddenKeys);
-		gremlinHelper.connect(connectionInfo).then(cb, cb);
+		cb();
 	},
 
 	disconnect: function(connectionInfo, cb){
-		gremlinHelper.close();
 		cb();
 	},
 
 	testConnection: function(connectionInfo, logger, cb){
-		this.connect(connectionInfo, logger, error => {
-			if (error) {
-				cb(error);
-				return;
-			}
-
-			gremlinHelper.testConnection().then(() => {
-				this.disconnect(connectionInfo, () => {});
-				cb();
-			}).catch(error => {
-				this.disconnect(connectionInfo, () => {});
-				logger.log('error', prepareError(error));
-				cb(error);
-			})
-		});
+		cb();
 	},
 
 	getDatabases: function(connectionInfo, logger, cb){
