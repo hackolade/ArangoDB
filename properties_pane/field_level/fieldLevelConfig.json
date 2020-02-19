@@ -146,9 +146,7 @@ making sure that you maintain a proper JSON format.
 				"propertyType": "group",
 				"propertyKeyword": "analyzers",
 				"propertyTooltip": "",
-				"hackoladeMeta": {
-					"enabledOnReferenceRoot": true
-				},
+				"enableForReference": true,
 				"dependency": {
 					"key": "refType",
 					"value": "collectionReference"
