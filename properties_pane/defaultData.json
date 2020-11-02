@@ -17,6 +17,13 @@
 		"shardingStrategy": "enterprise-hash-smart-edge",
 		"snippet": "documentCollection"
 	},
+	"nestedCollection": {
+		"collectionName": "New child collection",
+		"collectionUsers": [],
+		"entityType": "sub-node",
+		"collation": {},
+		"relationName":"Subclass of"
+	},
 	"graphConnection": {
 		"snippet": "relationshipCollection"
 	},

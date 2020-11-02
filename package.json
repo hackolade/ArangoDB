@@ -22,7 +22,9 @@
                 "disablePipelines": true
             },
             "jaySchemaHasRequiredPatternField": false,
-            "nestedCollections": false,
+            "nestedCollections": {
+                "isVirtual":true
+            },
             "graphDB": true,
             "relationships": {
                 "connectOnEntityLevel": true,
