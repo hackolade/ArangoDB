@@ -18,7 +18,7 @@
 		"snippet": "documentCollection"
 	},
 	"nestedCollection": {
-		"collectionName": "New child collection",
+		"collectionName": "New sub-collection",
 		"collectionUsers": [],
 		"entityType": "sub-node",
 		"collation": {},
