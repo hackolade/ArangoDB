@@ -21,6 +21,7 @@
 		"collectionName": "New sub-collection",
 		"collectionUsers": [],
 		"entityType": "sub-node",
+		"parentCollections":[],
 		"collation": {},
 		"relationName":"Subclass of"
 	},
