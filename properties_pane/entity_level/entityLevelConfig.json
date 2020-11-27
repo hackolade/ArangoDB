@@ -155,9 +155,15 @@ making sure that you maintain a proper JSON format.
 			},
 			{
 				"propertyKeyword": "parentCollection",
-				"propertyType": "selecthashed",
 				"canBeUnlinked": false,
 				"disabledOnCondition":{
+					"type": "not",
+					"values": {
+						"key": "entityType",
+						"value": "sub-node"
+					}
+				},
+				"dependency":{
 					"type": "not",
 					"values": {
 						"key": "entityType",
@@ -361,18 +367,6 @@ making sure that you maintain a proper JSON format.
 				"propertyName":"Entity type",
 				"valueType": "string",
 				"propertyKeyword":"entityType",
-				"hidden": true
-			},
-			{
-				"propertyKeyword":"parentCollections",
-				"propertyName":"Parent collections",
-				"valueType":"array",
-				"options": [],
-				"propertyType": "multiselect",
-				"dependency": {
-					"key": "entityType",
-					"value": "sub-node"
-				},
 				"hidden": true
 			}
 		]
