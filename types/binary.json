@@ -13,7 +13,6 @@
 		"foreignEntity": "",
 		"foreignField": [],
 		"default": "",
-		"gridFS": "",
 		"enum": [],
 		"sample": ""
 	}
