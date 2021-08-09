@@ -385,6 +385,13 @@ making sure that you maintain a proper JSON format.
 					"propertyType": "text"
 				},
 				{
+					"propertyName": "Activated",
+					"propertyKeyword": "isActivated",
+					"propertyTooltip": "Deactivated item will be not included in FE script",
+					"propertyType": "checkbox",
+					"defaultValue": true
+				},
+				{
 					"propertyName": "Description",
 					"propertyKeyword": "description",
 					"propertyTooltip": "description",
