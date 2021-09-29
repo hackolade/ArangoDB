@@ -7,7 +7,7 @@
     "async": "^2.6.0",
     "gremlin": "^3.4.3",
     "lodash": "^4.17.15",
-    "tunnel-ssh": "^4.1.4"
+    "tunnel-ssh": "github:hackolade/tunnel-ssh"
   },
   "installed": true
 }
