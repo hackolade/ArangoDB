@@ -41,7 +41,16 @@
 	"arrayItem": {},
 	"choice": {},
 	"relationship": {
-		"name": "New Relationship"
+		"name":  {
+			"value": "New Relationship",
+			"valueDependencies": [{
+				"value": "New Edge",
+				"dependency": {
+					"key": "level",
+					"value": "entity"
+				}
+			}]
+		}
 	},
 	"user": {},
 	"view": {

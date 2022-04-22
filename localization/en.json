@@ -22,7 +22,6 @@
 	"CONTEXT_MENU___ADD_RELATIONSHIP": "Add Relationship",
 	"CONTEXT_MENU___ADD_BUCKET_RELATIONSHIP": "Add Edge Collection",
 	"NEW___RELATIONSHIP_NAME": "New Relationship",
-	"NEW___BUCKET_RELATIONSHIP_NAME": "New Edge",
 	"TOOLBAR___ADD_BUCKET": "Add Database",
 	"TOOLBAR___ADD_COLLECTION": "Add Collection",
 	"TOOLBAR___ADD_CHILD_COLLECTION": "Add Sub-Collection",
