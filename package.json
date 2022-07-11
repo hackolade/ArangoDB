@@ -1,10 +1,10 @@
 {
     "name": "ArangoDB",
-    "version": "0.1.7",
+    "version": "0.1.6",
     "versionDate": "2022-04-22",
     "author": "hackolade",
     "engines": {
-        "hackolade": "5.1.3",
+        "hackolade": "6.2.4",
         "hackoladePlugin": "1.0.0"
     },
     "contributes": {
