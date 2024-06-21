@@ -1,22 +1,26 @@
 {
 	"name": "documentCollection",
-	"properties": [{
-		"name": "_key",
-		"type": "string",
-		"required": true,
-		"hasERDDivider": true,
-		"containerLevelKey": true
-	},{
-		"name": "_id",
-		"type": "string",
-		"required": true,
-		"hasERDDivider": true,
-		"containerLevelKey": true
-	},{
-		"name": "_rev",
-		"type": "string",
-		"required": true,
-		"hasERDDivider": true,
-		"containerLevelKey": true
-	}]
+	"properties": [
+		{
+			"name": "_key",
+			"type": "string",
+			"required": true,
+			"hasERDDivider": true,
+			"containerLevelKey": true
+		},
+		{
+			"name": "_id",
+			"type": "string",
+			"required": true,
+			"hasERDDivider": true,
+			"containerLevelKey": true
+		},
+		{
+			"name": "_rev",
+			"type": "string",
+			"required": true,
+			"hasERDDivider": true,
+			"containerLevelKey": true
+		}
+	]
 }

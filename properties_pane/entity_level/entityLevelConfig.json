@@ -138,8 +138,8 @@ making sure that you maintain a proper JSON format.
 					"key": "entityType",
 					"value": "sub-node"
 				},
-			    "valueType": "string",
-  				"propertyTooltip": "Edge"
+				"valueType": "string",
+				"propertyTooltip": "Edge"
 			},
 			{
 				"propertyName": "Sub-node key",
@@ -147,7 +147,7 @@ making sure that you maintain a proper JSON format.
 				"propertyType": "coupled",
 				"coupledBy": "namingConvention",
 				"onCoupleAction": "onCoupleCollectionBusinessName",
-    			"shouldValidate": true,
+				"shouldValidate": true,
 				"dependency": {
 					"key": "entityType",
 					"value": "sub-node"
@@ -156,14 +156,14 @@ making sure that you maintain a proper JSON format.
 			{
 				"propertyKeyword": "parentCollection",
 				"canBeUnlinked": false,
-				"disabledOnCondition":{
+				"disabledOnCondition": {
 					"type": "not",
 					"values": {
 						"key": "entityType",
 						"value": "sub-node"
 					}
 				},
-				"dependency":{
+				"dependency": {
 					"type": "not",
 					"values": {
 						"key": "entityType",
@@ -173,7 +173,7 @@ making sure that you maintain a proper JSON format.
 			},
 			{
 				"propertyKeyword": "childCollection",
-				"disabledOnCondition":{}
+				"disabledOnCondition": {}
 			},
 			{
 				"propertyKeyword": "additionalProperties"
@@ -211,12 +211,7 @@ making sure that you maintain a proper JSON format.
 						"propertyKeyword": "keyOptionsType",
 						"propertyTooltip": "Select from list of options",
 						"propertyType": "select",
-						"options": [
-							"traditional",
-							"autoincrement",
-							"uuid",
-							"padded"
-						]
+						"options": ["traditional", "autoincrement", "uuid", "padded"]
 					},
 					{
 						"propertyName": "Allow user keys",
@@ -261,7 +256,7 @@ making sure that you maintain a proper JSON format.
 				"propertyName": "Enable sharding",
 				"propertyKeyword": "enableSharding",
 				"propertyType": "checkbox",
-				"dependency":{
+				"dependency": {
 					"type": "not",
 					"values": {
 						"key": "entityType",
@@ -364,176 +359,170 @@ making sure that you maintain a proper JSON format.
 				"valueType": "string"
 			},
 			{
-				"propertyName":"Entity type",
+				"propertyName": "Entity type",
 				"valueType": "string",
-				"propertyKeyword":"entityType",
+				"propertyKeyword": "entityType",
 				"hidden": true
 			}
 		]
-	},{
+	},
+	{
 		"lowerTab": "Indexes",
-		"structure": [{
-			"propertyName": "Index",
-			"propertyType": "group",
-			"propertyKeyword": "index",
-			"propertyTooltip": "",
-			"structure": [
-				{
-					"propertyName": "Name",
-					"propertyKeyword": "name",
-					"propertyTooltip": "",
-					"propertyType": "text"
-				},
-				{
-					"propertyName": "Activated",
-					"propertyKeyword": "isActivated",
-					"propertyTooltip": "Deactivated item will be not included in FE script",
-					"propertyType": "checkbox",
-					"defaultValue": true
-				},
-				{
-					"propertyName": "Description",
-					"propertyKeyword": "description",
-					"propertyTooltip": "description",
-					"propertyType": "details",
-					"template": "textarea"
-				},
-				{
-					"propertyName": "Type",
-					"propertyKeyword": "indexType",
-					"propertyTooltip": "Select from list of options",
-					"propertyType": "select",
-					"options": [
-						"primary",
-						"edge",
-						"hash",
-						"skiplist",
-						"ttl",
-						"geo",
-						"fulltext",
-						"persistent"
-					]
-				},
-				{
-					"propertyName": "Key",
-					"propertyKeyword": "key",
-					"shouldValidate": false,
-					"propertyType": "fieldList",
-					"template": "orderedList"
-				},
-				{
-					"propertyName": "Unique",
-					"propertyKeyword": "uniqueIndex",
-					"propertyType": "checkbox",
-					"dependency": {
-						"type": "or",
-						"values": [
-							{
-								"key": "indexType",
-								"value": "hash"
-							},
-							{
-								"key": "indexType",
-								"value": "skiplist"
-							},
-							{
-								"key": "indexType",
-								"value": "persistent"
-							}
-						]
+		"structure": [
+			{
+				"propertyName": "Index",
+				"propertyType": "group",
+				"propertyKeyword": "index",
+				"propertyTooltip": "",
+				"structure": [
+					{
+						"propertyName": "Name",
+						"propertyKeyword": "name",
+						"propertyTooltip": "",
+						"propertyType": "text"
+					},
+					{
+						"propertyName": "Activated",
+						"propertyKeyword": "isActivated",
+						"propertyTooltip": "Deactivated item will be not included in FE script",
+						"propertyType": "checkbox",
+						"defaultValue": true
+					},
+					{
+						"propertyName": "Description",
+						"propertyKeyword": "description",
+						"propertyTooltip": "description",
+						"propertyType": "details",
+						"template": "textarea"
+					},
+					{
+						"propertyName": "Type",
+						"propertyKeyword": "indexType",
+						"propertyTooltip": "Select from list of options",
+						"propertyType": "select",
+						"options": ["primary", "edge", "hash", "skiplist", "ttl", "geo", "fulltext", "persistent"]
+					},
+					{
+						"propertyName": "Key",
+						"propertyKeyword": "key",
+						"shouldValidate": false,
+						"propertyType": "fieldList",
+						"template": "orderedList"
+					},
+					{
+						"propertyName": "Unique",
+						"propertyKeyword": "uniqueIndex",
+						"propertyType": "checkbox",
+						"dependency": {
+							"type": "or",
+							"values": [
+								{
+									"key": "indexType",
+									"value": "hash"
+								},
+								{
+									"key": "indexType",
+									"value": "skiplist"
+								},
+								{
+									"key": "indexType",
+									"value": "persistent"
+								}
+							]
+						}
+					},
+					{
+						"propertyName": "Sparse",
+						"propertyKeyword": "sparseIndex",
+						"propertyType": "checkbox",
+						"dependency": {
+							"type": "or",
+							"values": [
+								{
+									"key": "indexType",
+									"value": "hash"
+								},
+								{
+									"key": "indexType",
+									"value": "skiplist"
+								},
+								{
+									"key": "indexType",
+									"value": "persistent"
+								}
+							]
+						}
+					},
+					{
+						"propertyName": "Deduplicate",
+						"propertyKeyword": "deduplicateIndex",
+						"propertyType": "checkbox",
+						"dependency": {
+							"type": "or",
+							"values": [
+								{
+									"key": "indexType",
+									"value": "hash"
+								},
+								{
+									"key": "indexType",
+									"value": "skiplist"
+								}
+							]
+						}
+					},
+					{
+						"propertyName": "Expire after (seconds)",
+						"propertyKeyword": "expireAfter",
+						"propertyValidate": true,
+						"propertyType": "numeric",
+						"valueType": "number",
+						"allowNegative": false,
+						"step": 1,
+						"dependency": {
+							"key": "indexType",
+							"value": "ttl"
+						}
+					},
+					{
+						"propertyName": "GeoJSON",
+						"propertyKeyword": "geoJson",
+						"propertyType": "checkbox",
+						"dependency": {
+							"key": "indexType",
+							"value": "geo"
+						}
+					},
+					{
+						"propertyName": "Minimum word length",
+						"propertyKeyword": "minLength",
+						"propertyValidate": true,
+						"propertyType": "numeric",
+						"valueType": "number",
+						"allowNegative": false,
+						"step": 1,
+						"dependency": {
+							"key": "indexType",
+							"value": "fulltext"
+						}
+					},
+					{
+						"propertyName": "Comments",
+						"propertyKeyword": "storedProcComments",
+						"shouldValidate": false,
+						"propertyTooltip": "comments",
+						"propertyType": "details",
+						"template": "textarea"
 					}
-				},
-				{
-					"propertyName": "Sparse",
-					"propertyKeyword": "sparseIndex",
-					"propertyType": "checkbox",
-					"dependency": {
-						"type": "or",
-						"values": [
-							{
-								"key": "indexType",
-								"value": "hash"
-							},
-							{
-								"key": "indexType",
-								"value": "skiplist"
-							},
-							{
-								"key": "indexType",
-								"value": "persistent"
-							}
-						]
-					}
-				},
-				{
-					"propertyName": "Deduplicate",
-					"propertyKeyword": "deduplicateIndex",
-					"propertyType": "checkbox",
-					"dependency": {
-						"type": "or",
-						"values": [
-							{
-								"key": "indexType",
-								"value": "hash"
-							},
-							{
-								"key": "indexType",
-								"value": "skiplist"
-							}
-						]
-					}
-				},
-				{
-					"propertyName": "Expire after (seconds)",
-					"propertyKeyword": "expireAfter",
-					"propertyValidate": true,
-					"propertyType": "numeric",
-					"valueType": "number",
-					"allowNegative": false,
-					"step": 1,
-					"dependency": {
-						"key": "indexType",
-						"value": "ttl"
-					}
-				},
-				{
-					"propertyName": "GeoJSON",
-					"propertyKeyword": "geoJson",
-					"propertyType": "checkbox",
-					"dependency": {
-						"key": "indexType",
-						"value": "geo"
-					}
-				},
-				{
-					"propertyName": "Minimum word length",
-					"propertyKeyword": "minLength",
-					"propertyValidate": true,
-					"propertyType": "numeric",
-					"valueType": "number",
-					"allowNegative": false,
-					"step": 1,
-					"dependency": {
-						"key": "indexType",
-						"value": "fulltext"
-					}
-				},
-				{
-					"propertyName": "Comments",
-					"propertyKeyword": "storedProcComments",
-					"shouldValidate": false,
-					"propertyTooltip": "comments",
-					"propertyType": "details",
-					"template": "textarea"
-				}
-			],
-			"dependency": {
-				"type": "not",
+				],
+				"dependency": {
+					"type": "not",
 					"values": {
 						"key": "entityType",
 						"value": "sub-node"
 					}
+				}
 			}
-		}]
+		]
 	}
 ]

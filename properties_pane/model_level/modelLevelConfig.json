@@ -124,9 +124,7 @@ making sure that you maintain a proper JSON format.
 				"shouldValidate": false,
 				"propertyTooltip": "DB vendor",
 				"propertyType": "select",
-				"options": [
-					"ArangoDB"
-				],
+				"options": ["ArangoDB"],
 				"disabledOption": true
 			},
 			{
@@ -135,9 +133,7 @@ making sure that you maintain a proper JSON format.
 				"shouldValidate": false,
 				"propertyTooltip": "DB version",
 				"propertyType": "select",
-				"options": [
-					"3.x"
-				],
+				"options": ["3.x"],
 				"disabledOption": false
 			},
 			{
@@ -156,8 +152,7 @@ making sure that you maintain a proper JSON format.
 			{
 				"propertyName": "Relationships",
 				"propertyKeyword": "fieldRelationships",
-				"structure": [
-				]
+				"structure": []
 			},
 			{
 				"propertyName": "Edges",
@@ -196,12 +191,7 @@ making sure that you maintain a proper JSON format.
 								"propertyKeyword": "keyOptionsType",
 								"propertyTooltip": "Select from list of options",
 								"propertyType": "select",
-								"options": [
-									"traditional",
-									"autoincrement",
-									"uuid",
-									"padded"
-								]
+								"options": ["traditional", "autoincrement", "uuid", "padded"]
 							},
 							{
 								"propertyName": "Allow user keys",
@@ -334,7 +324,6 @@ making sure that you maintain a proper JSON format.
 					}
 				]
 			}
-			
 		]
 	}
 ]

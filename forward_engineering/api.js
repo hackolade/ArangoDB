@@ -5,14 +5,14 @@ module.exports = {
 	generateContainerScript(data, logger, cb) {
 		try {
 			cb(null, '');
-		} catch(e) {
+		} catch (e) {
 			logger.log('error', { message: e.message, stack: e.stack }, 'Forward-Engineering Error');
 			setTimeout(() => {
 				cb({ message: e.message, stack: e.stack });
 			}, 150);
 			return;
 		}
-	}
+	},
 };
 
 const generateVariables = variables => {
@@ -30,7 +30,7 @@ const generateVariables = variables => {
 
 			return script + `graph.variables().set("${key}", "${value}");\n`;
 		} catch (e) {
-			return script + `graph.variables().set("${key}", "${value}");\n`
+			return script + `graph.variables().set("${key}", "${value}");\n`;
 		}
 	}, '');
 };
@@ -46,8 +46,8 @@ const generateVertices = (collections, jsonData) => {
 	const vertices = collections.map(collection => {
 		const vertexData = JSON.parse(jsonData[collection.GUID]);
 
-		return generateVertex(collection, vertexData)
-	});	
+		return generateVertex(collection, vertexData);
+	});
 
 	const script = vertices.join(';\n\n');
 	if (!script) {
@@ -55,7 +55,7 @@ const generateVertices = (collections, jsonData) => {
 	}
 
 	return script + ';';
-}
+};
 
 const generateEdge = (from, to, relationship, edgeData) => {
 	const edgeName = relationship.name;
@@ -77,7 +77,9 @@ const generateEdges = (collections, relationships, jsonData) => {
 		const to = transformToValidGremlinName(childCollection.collectionName);
 		const edgeData = JSON.parse(jsonData[relationship.GUID]);
 
-		return edges.concat(generateEdge(getVertexVariableScript(from), getVertexVariableScript(to), relationship, edgeData));
+		return edges.concat(
+			generateEdge(getVertexVariableScript(from), getVertexVariableScript(to), relationship, edgeData),
+		);
 	}, []);
 
 	if (_.isEmpty(edges)) {
@@ -85,11 +87,12 @@ const generateEdges = (collections, relationships, jsonData) => {
 	}
 
 	return edges.join(';\n\n') + ';';
-}
+};
 
 const getDefaultMetaPropertyValue = type => {
-	switch(type) {
-		case 'map': case 'list':
+	switch (type) {
+		case 'map':
+		case 'list':
 			return '[]';
 		case 'set':
 			return '[].toSet()';
@@ -111,7 +114,7 @@ const getDefaultMetaPropertyValue = type => {
 };
 
 const handleMetaProperties = metaProperties => {
-	if (!metaProperties){
+	if (!metaProperties) {
 		return '';
 	}
 
@@ -120,12 +123,11 @@ const handleMetaProperties = metaProperties => {
 			return list;
 		}
 
-		const sample = _.isUndefined(property.metaPropSample) ? getDefaultMetaPropertyValue(property.metaPropType) : property.metaPropSample;
+		const sample = _.isUndefined(property.metaPropSample)
+			? getDefaultMetaPropertyValue(property.metaPropType)
+			: property.metaPropSample;
 
-		return list.concat(
-			JSON.stringify(property.metaPropName), 
-			sample
-		);
+		return list.concat(JSON.stringify(property.metaPropName), sample);
 	}, []);
 
 	return metaPropertiesFlatList.join(', ');
@@ -137,13 +139,15 @@ const handleMultiProperty = (property, name, jsonData) => {
 		properties = [properties];
 	}
 	if (properties.length === 1) {
-		properties = [ ...properties, ...properties];
+		properties = [...properties, ...properties];
 		jsonData.push(_.first(jsonData));
 	}
 
 	const type = property.childType || property.type;
 	const nameString = JSON.stringify(name);
-	const propertiesValues = properties.map((property, index) => convertPropertyValue(property, 2, type, jsonData[index]));
+	const propertiesValues = properties.map((property, index) =>
+		convertPropertyValue(property, 2, type, jsonData[index]),
+	);
 	const metaProperties = properties.map(property => {
 		const metaPropertiesScript = handleMetaProperties(property.metaProperties);
 		if (_.isEmpty(metaPropertiesScript)) {
@@ -154,9 +158,11 @@ const handleMultiProperty = (property, name, jsonData) => {
 	});
 	const cardinalities = properties.map(childProperty => childProperty.propCardinality || property.propCardinality);
 
-	return propertiesValues.reduce((script, valueScript, index) => 
-		`${script}.\n${DEFAULT_INDENT}property(${cardinalities[index]}, ${nameString}, ${valueScript}${metaProperties[index]})`
-	, '');
+	return propertiesValues.reduce(
+		(script, valueScript, index) =>
+			`${script}.\n${DEFAULT_INDENT}property(${cardinalities[index]}, ${nameString}, ${valueScript}${metaProperties[index]})`,
+		'',
+	);
 };
 
 const resolveChoices = (properties, choices) => {
@@ -170,7 +176,7 @@ const resolveChoices = (properties, choices) => {
 
 		return {
 			properties: _.first(choiceData.choice).properties || {},
-			index
+			index,
 		};
 	});
 
@@ -191,7 +197,7 @@ const resolveChoices = (properties, choices) => {
 
 		return {
 			properties: choiceData.properties,
-			index: choiceData.index + additionalPropertiesCount
+			index: choiceData.index + additionalPropertiesCount,
 		};
 	});
 
@@ -202,22 +208,19 @@ const resolveChoices = (properties, choices) => {
 			return choiceProperties;
 		}
 
-		if (
-			_.isUndefined(choicePropertiesIndex) ||
-			Object.keys(sortedProperties).length <= choicePropertiesIndex
-		) {
+		if (_.isUndefined(choicePropertiesIndex) || Object.keys(sortedProperties).length <= choicePropertiesIndex) {
 			return Object.assign({}, sortedProperties, choiceProperties);
 		}
 
 		return Object.keys(sortedProperties).reduce((result, propertyKey, index) => {
 			if (index !== choicePropertiesIndex) {
 				return Object.assign({}, result, {
-					[propertyKey] : sortedProperties[propertyKey]
+					[propertyKey]: sortedProperties[propertyKey],
 				});
 			}
 
 			return Object.assign({}, result, choiceProperties, {
-				[propertyKey] : sortedProperties[propertyKey]
+				[propertyKey]: sortedProperties[propertyKey],
 			});
 		}, {});
 	}, properties || {});
@@ -236,7 +239,7 @@ const addPropertiesScript = (collection, vertexData) => {
 			[choiceType]: {
 				choice: _.get(collection, choiceType, []),
 				meta: _.get(collection, `${choiceType}_meta`, {}),
-			}
+			},
 		});
 	}, {});
 
@@ -258,7 +261,10 @@ const addPropertiesScript = (collection, vertexData) => {
 		}
 		const valueScript = convertPropertyValue(property, 2, type, vertexData[name]);
 
-		return script + `.\n${DEFAULT_INDENT}property(${property.propCardinality}, ${JSON.stringify(name)}, ${valueScript}${metaPropertiesScript})`;
+		return (
+			script +
+			`.\n${DEFAULT_INDENT}property(${property.propCardinality}, ${JSON.stringify(name)}, ${valueScript}${metaPropertiesScript})`
+		);
 	}, '');
 };
 
@@ -268,12 +274,12 @@ const convertMap = (property, level, value) => {
 	const properties = property.properties;
 	const childProperties = Object.keys(properties).map(name => ({
 		name,
-		property: properties[name]
+		property: properties[name],
 	}));
 	const indent = _.range(0, level).reduce(indent => indent + DEFAULT_INDENT, '');
 	const previousIndent = _.range(0, level - 1).reduce(indent => indent + DEFAULT_INDENT, '');
 
-	let mapValue = childProperties.reduce((result, {name, property}) => {
+	let mapValue = childProperties.reduce((result, { name, property }) => {
 		const childValue = value[name];
 		const type = property.childType || property.type;
 
@@ -301,7 +307,7 @@ const convertList = (property, level, value) => {
 	}, '');
 
 	if (listValue.slice(0, 2) === ', ') {
-		listValue = listValue.slice(2)
+		listValue = listValue.slice(2);
 	}
 
 	return `[${listValue}]`;
@@ -315,7 +321,8 @@ const convertSet = (property, level, value) => {
 
 const convertTimestamp = value => `new java.sql.Timestamp(${JSON.stringify(value)})`;
 
-const convertDate = value => `new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX").parse(${JSON.stringify(value)})`;
+const convertDate = value =>
+	`new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX").parse(${JSON.stringify(value)})`;
 
 const convertUUID = value => `UUID.fromString(${JSON.stringify(value)})`;
 
@@ -323,7 +330,7 @@ const convertNumber = (property, value) => {
 	const mode = property.mode;
 	const numberValue = JSON.stringify(value);
 
-	switch(mode) {
+	switch (mode) {
 		case 'double':
 			return `${numberValue}d`;
 		case 'float':
@@ -340,7 +347,7 @@ const convertPropertyValue = (property, level, type, value) => {
 		return JSON.stringify(value);
 	}
 
-	switch(type) {
+	switch (type) {
 		case 'uuid':
 			return convertUUID(value);
 		case 'map':
@@ -378,7 +385,8 @@ const transformToValidGremlinName = name => {
 	return nameWithoutSpecialCharacters;
 };
 
-const generateIndex = indexData => `graph.createIndex("${indexData.propertyName}", ${indexData.elementType || 'Vertex'})`;
+const generateIndex = indexData =>
+	`graph.createIndex("${indexData.propertyName}", ${indexData.elementType || 'Vertex'})`;
 
 const generateIndexes = indexesData => {
 	const correctIndexes = indexesData.filter(index => index.propertyName);

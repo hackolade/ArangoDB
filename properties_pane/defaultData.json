@@ -22,7 +22,7 @@
 		"collectionUsers": [],
 		"entityType": "sub-node",
 		"collation": {},
-		"relationName":"Subclass of"
+		"relationName": "Subclass of"
 	},
 	"graphConnection": {
 		"snippet": "relationshipCollection"
@@ -41,15 +41,17 @@
 	"arrayItem": {},
 	"choice": {},
 	"relationship": {
-		"name":  {
+		"name": {
 			"value": "New Relationship",
-			"valueDependencies": [{
-				"value": "New Edge",
-				"dependency": {
-					"key": "level",
-					"value": "entity"
+			"valueDependencies": [
+				{
+					"value": "New Edge",
+					"dependency": {
+						"key": "level",
+						"value": "entity"
+					}
 				}
-			}]
+			]
 		}
 	},
 	"user": {},

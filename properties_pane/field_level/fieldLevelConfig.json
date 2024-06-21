@@ -214,17 +214,7 @@ making sure that you maintain a proper JSON format.
 			"sample",
 			"comments"
 		],
-		"binary": [
-			"name",
-			"code",
-			"schemaId",
-			"description",
-			"type",
-			"required",
-			"dependencies",
-			"sample",
-			"comments"
-		],
+		"binary": ["name", "code", "schemaId", "description", "type", "required", "dependencies", "sample", "comments"],
 		"object": [
 			"name",
 			"code",
@@ -252,14 +242,6 @@ making sure that you maintain a proper JSON format.
 			"additionalItems",
 			"comments"
 		],
-		"null": [
-			"name",
-			"code",
-			"schemaId",
-			"description",
-			"type",
-			"required",
-			"comments"
-		]
+		"null": ["name", "code", "schemaId", "description", "type", "required", "comments"]
 	}
 }
