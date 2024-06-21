@@ -316,7 +316,7 @@ const convertRootGraphSON = propertiesMap => {
 			}
 
 			if (_.isObject(property)) {
-				return { key, values };
+				return { keys, values };
 			}
 
 			return { keys: [...keys, property + ''], values };
@@ -512,7 +512,7 @@ const convertMetaProperty = metaPropertyMap => {
 			}
 
 			if (_.isObject(property)) {
-				return { key, values, samples };
+				return { keys, values, samples };
 			}
 
 			return { keys: [...keys, property + ''], values, samples };

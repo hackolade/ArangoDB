@@ -1,5 +1,9 @@
 'use strict';
 
+const _ = require('lodash');
+const async = require('async');
+const gremlinHelper = require('./gremlinHelper');
+
 module.exports = {
 	connect: function (connectionInfo, logger, cb) {
 		cb();
@@ -55,7 +59,6 @@ module.exports = {
 		const dataBaseNames = data.collectionData.dataBaseNames;
 		const fieldInference = data.fieldInference;
 		const includeEmptyCollection = data.includeEmptyCollection;
-		const includeSystemCollection = data.includeSystemCollection;
 		const recordSamplingSettings = data.recordSamplingSettings;
 		let packages = {
 			labels: [],

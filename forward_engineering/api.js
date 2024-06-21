@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const DEFAULT_INDENT = '    ';
 let graphName = 'g';
 
