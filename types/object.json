@@ -5,7 +5,7 @@
 	"parentType": "document",
 	"hiddenOnEntity": "view",
 	"defaultValues": {
-		"type": "document", 
+		"type": "document",
 		"childType": "object",
 		"primaryKey": false,
 		"relationshipType": "",

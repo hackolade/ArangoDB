@@ -165,7 +165,7 @@ making sure that you maintain a proper JSON format.
 						"propertyType": "details",
 						"template": "textarea",
 						"markdown": false
-			}
+					}
 				]
 			},
 			{

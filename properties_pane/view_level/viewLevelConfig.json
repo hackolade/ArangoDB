@@ -131,9 +131,7 @@ making sure that you maintain a proper JSON format.
 				"propertyKeyword": "viewType",
 				"propertyTooltip": "Select from list of options",
 				"propertyType": "select",
-				"options": [
-					"arangosearch"
-				]
+				"options": ["arangosearch"]
 			},
 			{
 				"propertyName": "Primary sort",
@@ -177,10 +175,7 @@ making sure that you maintain a proper JSON format.
 						"propertyKeyword": "consolidationType",
 						"propertyTooltip": "Select from list of options",
 						"propertyType": "select",
-						"options": [
-							"tier",
-							"bytes_accum"
-						]
+						"options": ["tier", "bytes_accum"]
 					},
 					{
 						"propertyName": "Threshold",
