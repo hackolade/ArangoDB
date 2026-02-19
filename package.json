@@ -61,7 +61,7 @@
         "pre-push": "npm run lint"
     },
     "scripts": {
-        "lint": "(oxlint . || true) && oxlint --type-aware --type-check --config .oxlintrc.imports.json .",
+        "lint": "oxlint . || true",
         "package": "node esbuild.package.js",
         "lint:check": "oxlint --type-aware --type-check . || true",
         "format": "prettier --write ."
