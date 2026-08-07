@@ -83,8 +83,8 @@
             "cpu-features": "npm:-@0.0.1",
             "ssh2": "npm:-@0.0.1"
         },
-        "minimatch": "10.2.4",
+        "minimatch": "10.2.6",
         "uuid": "14.0.0",
-        "brace-expansion": "5.0.8"
+        "brace-expansion": "5.0.9"
     }
 }
